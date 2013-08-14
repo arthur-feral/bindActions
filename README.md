@@ -2,3 +2,57 @@ bindActions
 ===========
 
 This is a jQuery plug-in very useful to attach events to DOM elements.
+
+HOW TO USE
+==========
+In your HTML document, or in html templates (for backbones, Mustache ...), prepare your DOM element to be set like this Example:
+
+```html
+
+<div class="action" data-event="click" data-action="myNamescapce.mySubnamespace.myFunction">A Button</div>
+<select class="action" data-event="change" data-action="myNamescapce.myFunction">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+</select>
+<a href="javascript:void(0);" class="action" data-foo="bar" data-event="click" data-action="myFunction">My Super Button</a>
+<input type="text" class="action" data-event="keyup" data-action="anotherNamespace.myOtherFunction">
+```
+
+In your Javascript file, define functions as:
+```javascript
+actions = $.extend(actions, {
+    myFunction: function(el, e){
+        // el is a jQuery element, here it's the <a> DOM element
+        // e is the event object
+        console.log(el.attr('data-foo')); // display 'bar'
+    },
+    myNamespace: {
+        myFunction: function(el, e){
+            // el is a jQuery element, here it's the <select> DOM element
+            // e is the event object
+            console.log('New value', el.val());
+        },
+        mySubnamespace: {
+            myFunction: function(el, e){
+                // el is a jQuery element, here it's the <div> DOM element
+                // e is the event object
+                el.fadeOut(200, function(){
+                    $(this).remove();
+                });
+            }
+        }
+    },
+    anoterNamespace: {
+        myOtherFunction: function(el, e){
+            // el is a jQuery element, here it's the <input> DOM element
+            // e is the event object
+            var code = (e.keyCode ? e.keyCode : e.which);
+            if(code == 13){
+                console.log('Pressed Enter !');
+            }
+            console.log('value of input', el.val());
+        }
+    }
+});
+```

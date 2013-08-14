@@ -66,7 +66,7 @@ To turn off events on elements just use
 $('.action').bindActions('off');
 ```
 
-if(you) just want to bind an event on a specific element use jQuery selector
+if(you){just want to bind an event on a specific element use jQuery selector;}
 
 ```javascript
 $('#mySelectElement').bindAction('on');

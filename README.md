@@ -91,3 +91,14 @@ IMPORTANT
 =========
 
 All the functions that you define must be in actions original namespace. So use $.extend jquery function to define yours in actions js object
+```javascript
+actions = $.extend(actions, {
+    myFunction: function(el, e){
+        //code here
+    },
+    myNamespace: {}
+});
+```
+
+
+return 'Enjoy';

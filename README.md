@@ -10,7 +10,7 @@ In your HTML document, or in html templates (for backbones, Mustache ...), prepa
 ```html
 
 <div class="action" data-event="click" data-action="myNamescapce.mySubnamespace.myFunction">A Button</div>
-<select class="action" data-event="change" data-action="myNamescapce.myFunction">
+<select id="mySelectElement" class="action" data-event="change" data-action="myNamescapce.myFunction">
 	<option value="1">1</option>
 	<option value="2">2</option>
 	<option value="3">3</option>
@@ -55,4 +55,20 @@ actions = $.extend(actions, {
         }
     }
 });
+```
+To bind events on elements, just call this function below anywhere in your code:
+```javascript
+$('.action').bindActions('on');
+```
+
+To turn off events on elements just use
+```javascript
+$('.action').bindActions('off');
+```
+
+if(you) just want to bind an event on a specific element use jQuery selector
+
+```javascript
+$('#mySelectElement').bindAction('on');
+$('#mySelectElement').bindAction('off');
 ```

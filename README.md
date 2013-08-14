@@ -43,7 +43,7 @@ actions = $.extend(actions, {
             }
         }
     },
-    anoterNamespace: {
+    anotherNamespace: {
         myOtherFunction: function(el, e){
             // el is a jQuery element, here it's the <input> DOM element
             // e is the event object

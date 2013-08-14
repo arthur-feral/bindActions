@@ -72,3 +72,17 @@ if(you) just want to bind an event on a specific element use jQuery selector
 $('#mySelectElement').bindAction('on');
 $('#mySelectElement').bindAction('off');
 ```
+There is two parameters on functions called on events:
+```javascript
+myFunction: function(el, e){
+	//code here	
+}
+```
+When a function is call after fireing event, your can get the target element called by 'el', and retrieve all informations you need or set options:
+```javascript
+el.css({ height: '100px' });
+el.attr('data-foo');
+el.attr('href');
+```
+
+the 'e' parameter is the original event object.

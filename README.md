@@ -86,3 +86,8 @@ el.attr('href');
 ```
 
 the 'e' parameter is the original event object.
+
+IMPORTANT
+=========
+
+All the functions that you define must be in actions original namespace. So use $.extend jquery function to define yours in actions js object

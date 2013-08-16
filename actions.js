@@ -35,6 +35,11 @@ $.fn.bindActions = function(is){
         "key",
         "change"
     ];
+    $(document).on('DOMNodeInserted', function(e){
+        var t = $(e.target);
+        var isTarget = t.attr('[data-action]') != undefined && t.attr('[data-event]') != undefined;
+        if(isTarget && is == 'on') t.bindActions('on');
+    });
     if(is == 'on'){
     	return this.each(function(){
             if(!$(this).hasClass('inactive')){

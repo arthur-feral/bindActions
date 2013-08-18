@@ -35,11 +35,23 @@ $.fn.bindActions = function(is){
         "key",
         "change"
     ];
-    $(document).on('DOMNodeInserted', function(e){
-        var t = $(e.target);
-        var isTarget = t.attr('[data-action]') != undefined && t.attr('[data-event]') != undefined;
-        if(isTarget && is == 'on') t.bindActions('on');
-    });
+    function bindDom(){
+        $(document).on('DOMNodeInserted.actions', function(e){
+            var t = $(e.target);
+            var isTarget = t.data('action') != undefined && t.data('event') != undefined;
+            if(isTarget){
+                t.bindActions('on');
+                console.info('Bind action on new node', t);
+            }
+        });
+    }
+    if($(document).data('events')['DOMNodeInserted'] == undefined){
+        bindDom();
+    }else{
+        if($(document).data('events')['DOMNodeInserted'][0].namespace != "actions"){
+            bindDom();
+        }
+    }
     if(is == 'on'){
     	return this.each(function(){
             if(!$(this).hasClass('inactive')){
@@ -56,7 +68,7 @@ $.fn.bindActions = function(is){
 	            if($(this).data('events') != undefined && $(this).data('events')[currentEv] != undefined){
 	            	for(var i = 0 ; i < $(this).data('events')[currentEv].length ; i++){
 		            	if($(this).data('events')[currentEv][i].namespace == currentEvName){
-                            // console.error('element has already an event, rebinding...');
+                            console.warn('element has already an event, rebinding...');
 		            		// console.warn($(this), $(this).data('events')[currentEv][i], $(this).attr('data-action'));
                             // $(this).off(currentEvName);
 		            		$(this).off(a);
@@ -83,10 +95,10 @@ $.fn.bindActions = function(is){
                     $(this).on(a, function(e){
                         e.stopPropagation();
                         if(fn) (fn)(this, e);
-                        // if($(this).attr('data-callback') != undefined){
-                        //     console.info('Calling callback', $(this).attr('data-callback'));
-                        //     actions.fireCallback($(this), e);
-                        // }
+                        if($(this).attr('data-callback') != undefined){
+                            console.info('Calling callback', $(this).attr('data-callback'));
+                            actions.fireCallback($(this), e);
+                        }
                     });
                 }
 	        }

@@ -16,7 +16,7 @@ It uses your namespace functions to prevent duplication of functions, for exampl
 So simply extend action object with jQuery on each Javascript files where functions are defined.
 
 
-To use it, simply include actions.js in the <HEAD>,and call $('.action').bindActions('on') function when the document is ready, and then all elements whose class "action" will be ready to be triggered, and future.
+To use it, simply include actions.js in the HEAD markup, and call $('.action').bindActions('on') function when the document is ready, and then all elements whose class "action" will be ready to be triggered, and future.
 
 HOW TO USE
 ==========

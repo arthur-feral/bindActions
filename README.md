@@ -115,5 +115,6 @@ actions = $.extend(actions, {
 });
 ```
 
+in the use of templates, add class "action" to target elements that are detected as potential triggers by the plugin
 
 return 'Enjoy';

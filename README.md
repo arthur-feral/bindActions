@@ -14,6 +14,7 @@ it also detects if a component is added to the document and determines whether i
 
 Il utilise vos namespace de fonctions pour prévenir des doublons de fonctions, ainsi si dans le data-action d'un élément HTML vous avez "myNamespace.myFunction", quand l'évènement sera déclenché, il appellera la fonction "myFunction" définie dans "actions.myNamespace".
 
+
 HOW TO USE
 ==========
 In your HTML document, or in html templates (for backbones, Mustache ...), prepare your DOM element to be set like this Example:

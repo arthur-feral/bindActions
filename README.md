@@ -1,7 +1,11 @@
 bindActions
 ===========
 
-This is a jQuery plug-in very useful to attach events to DOM elements.
+This is a jQuery plugin very useful to attach events to DOM elements.
+This plugin allows you to save time and make your javascript code cleaner. 
+A simple look at the HTML code and you will know which function will execute when the user clicks this button or select as its value changes.
+If a button is an Ajax call, you can simply disable it at the beginning of the function and also reactivate just when it is complete to prevent abuse.
+You can not accidentally bind several times the same function on a button because the plugin detects if this is the case.
 
 HOW TO USE
 ==========

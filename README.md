@@ -12,7 +12,7 @@ You can not accidentally bind several times the same function on a button becaus
 
 it also detects if a component is added to the document and determines whether it should be linked to an event, if this is the case it activates the event on the element. Very convenient to use templates.
 
-It uses your namespace functions to prevent duplication of functions, and if the data in an HTML action you "myNamespace.myFunction" when the event is triggered element, called the "myFunction" function defined in "actions.myNamespace ".
+It uses your namespace functions to prevent duplication of functions, for example, if the data-action value in the HTML code is "myNamespace.myFunction" when the event is triggered, the element call "myFunction" defined in "actions.myNamespace".
 
 To use it, simply include the file in the actions.js <HEAD> example, and call $ ('. Action') bindActions function. ('On') when the document is ready, and then all elements whose class "action" will be ready to be triggered, and future.
 

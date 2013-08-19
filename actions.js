@@ -25,7 +25,6 @@ actions = $.extend(actions, {
 $.fn.bindActions = function(params){
     function bindDom(){
         $(document).on('DOMNodeInserted.action', '.action', function(e){
-            console.log('gzer')
             var t = $(e.target);
             var isTarget = t.data('action') != undefined && t.data('event') != undefined;
             if(isTarget){

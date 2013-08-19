@@ -99,10 +99,12 @@ $.fn.bindActions = function(params){
     }
     if(typeof params === 'string'){
         if(params === 'on'){
-            return bindOn(this);
+            bindOn(this);
+            return this;
         }
         if(params === 'off'){
-            return bindOff(this);
+            bindOff(this);
+            return this;
         }
     }
 };

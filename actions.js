@@ -97,8 +97,6 @@ $.fn.bindActions = function(params){
             }
         });
     }
-    
-    //cas on est plus en train de binder/unbinder un/des elem(s)
     if(typeof params === 'string'){
         if(params === 'on'){
             return bindOn(this);

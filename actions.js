@@ -30,7 +30,6 @@ $.fn.bindActions = function(params){
             var isTarget = t.data('action') != undefined && t.data('event') != undefined;
             if(isTarget){
                 t.bindActions('on');
-                //console.info('Bind action on ', t);
             }
         });
     }
@@ -56,9 +55,8 @@ $.fn.bindActions = function(params){
                 if($(this).data('events') != undefined && $(this).data('events')[currentEv] != undefined){
                     for(var i = 0 ; i < $(this).data('events')[currentEv].length ; i++){
                         if($(this).data('events')[currentEv][i].namespace === 'action'){
-                            console.error('element has already an event, rebinding...');
+                            console.warn('element has already an event, rebinding...');
                             // console.warn($(this), $(this).data('events')[currentEv][i], $(this).attr('data-action'));
-                            // $(this).off(currentEvName);
                             $(this).off(a);
                             break;
                         }

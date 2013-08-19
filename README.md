@@ -115,6 +115,12 @@ actions = $.extend(actions, {
 });
 ```
 
-in the use of templates, add class "action" to target elements that are detected as potential triggers by the plugin
+in the use of templates, add class "action" to target elements that are detected as potential triggers by the plugin.
 
+Mustache template sample:
+```html
+<script type="text/html" id="button_template">
+	<div class="action btn red" data-action="myFunction" data-event="click">{{label}}</div>
+</script>
+```
 return 'Enjoy';

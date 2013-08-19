@@ -1,6 +1,9 @@
 bindActions
 ===========
 
+About
+-----
+
 This is a jQuery plugin very useful to attach events to DOM elements.
 This plugin allows you to save time and make your javascript code cleaner. 
 A simple look at the HTML code and you will know which function will execute when the user clicks this button or select as its value changes.
@@ -8,6 +11,9 @@ If a button is an Ajax call, you can simply disable it at the beginning of the f
 You can not accidentally bind several times the same function on a button because the plugin detects if this is the case.
 
 it also detects if a component is added to the document and determines whether it should be linked to an event, if this is the case it activates the event on the element. Very convenient to use templates.
+
+Il utilise vos namespace de fonctions pour prévenir des doublons de fonctions, ainsi si dans le data-action d'un élément HTML vous avez "myNamespace.myFunction", quand l'évènement sera déclenché, il appellera la fonction "myFunction" définie dans "actions.myNamespace".
+
 HOW TO USE
 ==========
 In your HTML document, or in html templates (for backbones, Mustache ...), prepare your DOM element to be set like this Example:

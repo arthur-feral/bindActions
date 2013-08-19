@@ -7,6 +7,7 @@ A simple look at the HTML code and you will know which function will execute whe
 If a button is an Ajax call, you can simply disable it at the beginning of the function and also reactivate just when it is complete to prevent abuse.
 You can not accidentally bind several times the same function on a button because the plugin detects if this is the case.
 
+it also detects if a component is added to the document and determines whether it should be linked to an event, if this is the case it activates the event on the element. Very convenient to use templates.
 HOW TO USE
 ==========
 In your HTML document, or in html templates (for backbones, Mustache ...), prepare your DOM element to be set like this Example:

@@ -84,8 +84,8 @@ $('.action').bindActions('off');
 if(you){just want to bind an event on a specific element use jQuery selector;}
 
 ```javascript
-$('#mySelectElement').bindAction('on');
-$('#mySelectElement').bindAction('off');
+$('#mySelectElement').bindActions('on');
+$('#mySelectElement').bindActions('off');
 ```
 There is two parameters on functions called on events:
 ```javascript
